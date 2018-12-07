@@ -3,7 +3,5 @@
     <string name="app_name">Task3</string>
     <string name="note_et_hint">Enter name</string>
     <string name="camera_text_btn">Make a photo</string>
-    <string name="error_message_1">File creation error</string>
-    <string name="error_message_2">Something went wrong!</string>
     <string name="warning_message_1">You must enter name!</string>
 </resources>

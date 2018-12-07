@@ -24,8 +24,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         camera_btn.setOnClickListener{
-            if(!note_text.text.isEmpty()) openCameraIntent()
-            else showWarning(R.string.warning_message_1)
+            if(!note_text.text.isEmpty())
+                openCameraIntent()
+            else Snackbar.make(root_layout,R.string.warning_message_1,Snackbar.LENGTH_LONG).show()
         }
     }
 
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         if (pictureIntent.resolveActivity(packageManager) != null) {
             var photoFile: File? = null
             try { photoFile = createImageFile() }
-            catch (ex: IOException) { showWarning(R.string.error_message_1) }
+            catch (ex: IOException) {}
 
             if (photoFile != null) {
                 val authorities = BuildConfig.APPLICATION_ID + ".fileprovider"
@@ -64,12 +65,8 @@ class MainActivity : AppCompatActivity() {
                 startActivity(photoActivityIntent)
                 finish()
             }
-            else showWarning(R.string.error_message_2)
         }
         super.onActivityResult(requestCode, resultCode, intent)
-    }
-    private fun showWarning(message_id:Int){
-        Snackbar.make(root_layout, message_id, Snackbar.LENGTH_LONG).show()
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {

@@ -15,8 +15,8 @@ class PhotoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_photo)
 
         val image_file_location = intent.getStringExtra(IMAGE_LOCATION_TAG)
-
         val note_text = intent.getStringExtra(NOTE_TAG)
+
         val photo = BitmapFactory.decodeFile(image_file_location)
 
         photo_view.setImageBitmap(photo)
