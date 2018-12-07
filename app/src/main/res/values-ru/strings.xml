@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Task3</string>
+    <string name="note_et_hint">Введите имя</string>
+    <string name="camera_text_btn">Сделать фото</string>
+    <string name="error_message_1">Ошибка при создании файла</string>
+    <string name="error_message_2">Что-то пошло не так</string>
+    <string name="warning_message_1">Введите имя!</string>
+</resources>

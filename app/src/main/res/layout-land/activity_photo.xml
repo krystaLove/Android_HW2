@@ -7,8 +7,8 @@
         android:layout_height="match_parent"
         tools:context=".PhotoActivity">
     <ImageView
-            android:layout_width="350dp"
-            android:layout_height="350dp"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
             android:id="@+id/photo_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
