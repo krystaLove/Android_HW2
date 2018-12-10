@@ -15,8 +15,6 @@ import android.support.design.widget.Snackbar
 class MainActivity : AppCompatActivity() {
 
     private val REQUEST_CAPTURE_IMAGE = 200
-    private val IMAGE_LOCATION_TAG = "IMAGE"
-    private val NOTE_TAG = "NOTE"
     private var image_file_location = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,8 +58,8 @@ class MainActivity : AppCompatActivity() {
         if (requestCode == REQUEST_CAPTURE_IMAGE) {
             if (resultCode == Activity.RESULT_OK) {
                 val photoActivityIntent = Intent(this, PhotoActivity::class.java)
-                photoActivityIntent.putExtra(IMAGE_LOCATION_TAG,image_file_location)
-                photoActivityIntent.putExtra(NOTE_TAG,note_text.text.toString())
+                photoActivityIntent.putExtra(PhotoActivity.IMAGE_LOCATION_TAG,image_file_location)
+                photoActivityIntent.putExtra(PhotoActivity.NOTE_TAG,note_text.text.toString())
                 startActivity(photoActivityIntent)
                 finish()
             }
@@ -71,12 +69,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
         super.onRestoreInstanceState(savedInstanceState)
-        image_file_location = savedInstanceState?.getString(IMAGE_LOCATION_TAG)!!
+        image_file_location = savedInstanceState?.getString(PhotoActivity.IMAGE_LOCATION_TAG)!!
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
         super.onSaveInstanceState(outState)
-        outState?.putString(IMAGE_LOCATION_TAG, image_file_location)
+        outState?.putString(PhotoActivity.IMAGE_LOCATION_TAG, image_file_location)
     }
 
 }

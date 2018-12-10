@@ -7,8 +7,10 @@ import android.graphics.BitmapFactory
 
 class PhotoActivity : AppCompatActivity() {
 
-    private val IMAGE_LOCATION_TAG = "IMAGE"
-    private val NOTE_TAG = "NOTE"
+    companion object {
+        const val IMAGE_LOCATION_TAG = "IMAGE"
+        const val NOTE_TAG = "NOTE"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
